@@ -10,7 +10,7 @@ SteemConnect Library for iOS / Swift
 
 Installation via Carthage is easy enough:
 ```
-github "caspernikus/SwiftyConnect"
+github "caspernikus/SwiftyConnect" ~> 0.1.2
 ```
 
 ## How To Use ?
