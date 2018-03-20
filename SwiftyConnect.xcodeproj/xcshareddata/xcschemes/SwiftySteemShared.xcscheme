@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C1DFDF1D203AEA9C000897C5"
-               BuildableName = "SwiftySteem.framework"
-               BlueprintName = "SwiftySteem"
-               ReferencedContainer = "container:SwiftySteem.xcodeproj">
+               BuildableName = "SwiftyConnect.framework"
+               BlueprintName = "SwiftyConnect"
+               ReferencedContainer = "container:SwiftyConnect.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C1DFDF2C203AEB43000897C5"
-               BuildableName = "SwiftySteemTests.xctest"
-               BlueprintName = "SwiftySteemTests"
-               ReferencedContainer = "container:SwiftySteem.xcodeproj">
+               BuildableName = "SwiftyConnectTests.xctest"
+               BlueprintName = "SwiftyConnectTests"
+               ReferencedContainer = "container:SwiftyConnect.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1DFDF1D203AEA9C000897C5"
-            BuildableName = "SwiftySteem.framework"
-            BlueprintName = "SwiftySteem"
-            ReferencedContainer = "container:SwiftySteem.xcodeproj">
+            BuildableName = "SwiftyConnect.framework"
+            BlueprintName = "SwiftyConnect"
+            ReferencedContainer = "container:SwiftyConnect.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1DFDF1D203AEA9C000897C5"
-            BuildableName = "SwiftySteem.framework"
-            BlueprintName = "SwiftySteem"
-            ReferencedContainer = "container:SwiftySteem.xcodeproj">
+            BuildableName = "SwiftyConnect.framework"
+            BlueprintName = "SwiftyConnect"
+            ReferencedContainer = "container:SwiftyConnect.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1DFDF1D203AEA9C000897C5"
-            BuildableName = "SwiftySteem.framework"
-            BlueprintName = "SwiftySteem"
-            ReferencedContainer = "container:SwiftySteem.xcodeproj">
+            BuildableName = "SwiftyConnect.framework"
+            BlueprintName = "SwiftyConnect"
+            ReferencedContainer = "container:SwiftyConnect.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

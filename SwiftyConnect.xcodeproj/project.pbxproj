@@ -31,8 +31,8 @@
 		C19C5CCC2046F8C60084304A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CCA2046F8C60084304A /* Auth.swift */; };
 		C19C5CCD2046F8C60084304A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CCA2046F8C60084304A /* Auth.swift */; };
 		C19C5CCE2046F8C60084304A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CCA2046F8C60084304A /* Auth.swift */; };
-		C1DFDF32203AEB44000897C5 /* SwiftySteem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF1E203AEA9C000897C5 /* SwiftySteem.framework */; };
-		C1DFDF50203AFA5E000897C5 /* SwiftySteem_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF3F203AFA4B000897C5 /* SwiftySteem_macOS.framework */; };
+		C1DFDF32203AEB44000897C5 /* SwiftyConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */; };
+		C1DFDF50203AFA5E000897C5 /* SwiftyConnect_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */; };
 		C1DFDF72203AFE79000897C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF64203AFE78000897C5 /* Info.plist */; };
 		C1DFDF78203AFE79000897C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF66203AFE78000897C5 /* Info.plist */; };
 		C1DFDF7A203AFE79000897C5 /* SwiftySteemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF68203AFE78000897C5 /* SwiftySteemTests.swift */; };
@@ -108,10 +108,10 @@
 		C14F2577203F0B45003A42E5 /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		C19C5CC52045933E0084304A /* Broadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
 		C19C5CCA2046F8C60084304A /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		C1DFDF1E203AEA9C000897C5 /* SwiftySteem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftySteem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1DFDF2D203AEB43000897C5 /* SwiftySteemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftySteemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1DFDF3F203AFA4B000897C5 /* SwiftySteem_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftySteem_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1DFDF4B203AFA5E000897C5 /* SwiftySteem-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftySteem-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1DFDF2D203AEB43000897C5 /* SwiftyConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyConnect_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1DFDF4B203AFA5E000897C5 /* SwiftyConnect-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyConnect-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DFDF64203AFE78000897C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1DFDF66203AFE78000897C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1DFDF68203AFE78000897C5 /* SwiftySteemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftySteemTests.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1DFDF32203AEB44000897C5 /* SwiftySteem.framework in Frameworks */,
+				C1DFDF32203AEB44000897C5 /* SwiftyConnect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1DFDF50203AFA5E000897C5 /* SwiftySteem_macOS.framework in Frameworks */,
+				C1DFDF50203AFA5E000897C5 /* SwiftyConnect_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,10 +195,10 @@
 		C1DFDF1F203AEA9C000897C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C1DFDF1E203AEA9C000897C5 /* SwiftySteem.framework */,
-				C1DFDF2D203AEB43000897C5 /* SwiftySteemTests.xctest */,
-				C1DFDF3F203AFA4B000897C5 /* SwiftySteem_macOS.framework */,
-				C1DFDF4B203AFA5E000897C5 /* SwiftySteem-macOSTests.xctest */,
+				C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */,
+				C1DFDF2D203AEB43000897C5 /* SwiftyConnectTests.xctest */,
+				C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */,
+				C1DFDF4B203AFA5E000897C5 /* SwiftyConnect-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,9 +322,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C1DFDF1D203AEA9C000897C5 /* SwiftySteem */ = {
+		C1DFDF1D203AEA9C000897C5 /* SwiftyConnect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1DFDF26203AEA9C000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteem" */;
+			buildConfigurationList = C1DFDF26203AEA9C000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect" */;
 			buildPhases = (
 				C1DFDF19203AEA9C000897C5 /* Sources */,
 				C1DFDF1A203AEA9C000897C5 /* Frameworks */,
@@ -337,14 +337,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftySteem;
+			name = SwiftyConnect;
 			productName = SwiftySteem;
-			productReference = C1DFDF1E203AEA9C000897C5 /* SwiftySteem.framework */;
+			productReference = C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C1DFDF2C203AEB43000897C5 /* SwiftySteemTests */ = {
+		C1DFDF2C203AEB43000897C5 /* SwiftyConnectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1DFDF35203AEB44000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteemTests" */;
+			buildConfigurationList = C1DFDF35203AEB44000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnectTests" */;
 			buildPhases = (
 				C1DFDF29203AEB43000897C5 /* Sources */,
 				C1DFDF2A203AEB43000897C5 /* Frameworks */,
@@ -356,14 +356,14 @@
 			dependencies = (
 				C1DFDF34203AEB44000897C5 /* PBXTargetDependency */,
 			);
-			name = SwiftySteemTests;
+			name = SwiftyConnectTests;
 			productName = SwiftySteemTests;
-			productReference = C1DFDF2D203AEB43000897C5 /* SwiftySteemTests.xctest */;
+			productReference = C1DFDF2D203AEB43000897C5 /* SwiftyConnectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C1DFDF3E203AFA4B000897C5 /* SwiftySteem-macOS */ = {
+		C1DFDF3E203AFA4B000897C5 /* SwiftyConnect-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1DFDF44203AFA4B000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteem-macOS" */;
+			buildConfigurationList = C1DFDF44203AFA4B000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOS" */;
 			buildPhases = (
 				C1DFDF3A203AFA4B000897C5 /* Sources */,
 				C1DFDF3B203AFA4B000897C5 /* Frameworks */,
@@ -376,14 +376,14 @@
 			);
 			dependencies = (
 			);
-			name = "SwiftySteem-macOS";
+			name = "SwiftyConnect-macOS";
 			productName = "SwiftySteem-macOS";
-			productReference = C1DFDF3F203AFA4B000897C5 /* SwiftySteem_macOS.framework */;
+			productReference = C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C1DFDF4A203AFA5E000897C5 /* SwiftySteem-macOSTests */ = {
+		C1DFDF4A203AFA5E000897C5 /* SwiftyConnect-macOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1DFDF53203AFA5E000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteem-macOSTests" */;
+			buildConfigurationList = C1DFDF53203AFA5E000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOSTests" */;
 			buildPhases = (
 				C1DFDF47203AFA5E000897C5 /* Sources */,
 				C1DFDF48203AFA5E000897C5 /* Frameworks */,
@@ -395,9 +395,9 @@
 			dependencies = (
 				C1DFDF52203AFA5E000897C5 /* PBXTargetDependency */,
 			);
-			name = "SwiftySteem-macOSTests";
+			name = "SwiftyConnect-macOSTests";
 			productName = "SwiftySteem-macOSTests";
-			productReference = C1DFDF4B203AFA5E000897C5 /* SwiftySteem-macOSTests.xctest */;
+			productReference = C1DFDF4B203AFA5E000897C5 /* SwiftyConnect-macOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -432,7 +432,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C1DFDF18203AEA9C000897C5 /* Build configuration list for PBXProject "SwiftySteem" */;
+			buildConfigurationList = C1DFDF18203AEA9C000897C5 /* Build configuration list for PBXProject "SwiftyConnect" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -444,10 +444,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C1DFDF1D203AEA9C000897C5 /* SwiftySteem */,
-				C1DFDF2C203AEB43000897C5 /* SwiftySteemTests */,
-				C1DFDF3E203AFA4B000897C5 /* SwiftySteem-macOS */,
-				C1DFDF4A203AFA5E000897C5 /* SwiftySteem-macOSTests */,
+				C1DFDF1D203AEA9C000897C5 /* SwiftyConnect */,
+				C1DFDF2C203AEB43000897C5 /* SwiftyConnectTests */,
+				C1DFDF3E203AFA4B000897C5 /* SwiftyConnect-macOS */,
+				C1DFDF4A203AFA5E000897C5 /* SwiftyConnect-macOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -588,12 +588,12 @@
 /* Begin PBXTargetDependency section */
 		C1DFDF34203AEB44000897C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C1DFDF1D203AEA9C000897C5 /* SwiftySteem */;
+			target = C1DFDF1D203AEA9C000897C5 /* SwiftyConnect */;
 			targetProxy = C1DFDF33203AEB44000897C5 /* PBXContainerItemProxy */;
 		};
 		C1DFDF52203AFA5E000897C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C1DFDF3E203AFA4B000897C5 /* SwiftySteem-macOS */;
+			target = C1DFDF3E203AFA4B000897C5 /* SwiftyConnect-macOS */;
 			targetProxy = C1DFDF51203AFA5E000897C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -971,7 +971,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C1DFDF18203AEA9C000897C5 /* Build configuration list for PBXProject "SwiftySteem" */ = {
+		C1DFDF18203AEA9C000897C5 /* Build configuration list for PBXProject "SwiftyConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1DFDF24203AEA9C000897C5 /* Debug */,
@@ -980,7 +980,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1DFDF26203AEA9C000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteem" */ = {
+		C1DFDF26203AEA9C000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1DFDF27203AEA9C000897C5 /* Debug */,
@@ -989,7 +989,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1DFDF35203AEB44000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteemTests" */ = {
+		C1DFDF35203AEB44000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1DFDF36203AEB44000897C5 /* Debug */,
@@ -998,7 +998,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1DFDF44203AFA4B000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteem-macOS" */ = {
+		C1DFDF44203AFA4B000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1DFDF45203AFA4B000897C5 /* Debug */,
@@ -1007,7 +1007,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1DFDF53203AFA5E000897C5 /* Build configuration list for PBXNativeTarget "SwiftySteem-macOSTests" */ = {
+		C1DFDF53203AFA5E000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1DFDF54203AFA5E000897C5 /* Debug */,
