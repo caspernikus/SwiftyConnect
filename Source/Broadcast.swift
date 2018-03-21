@@ -24,6 +24,38 @@ public struct JSONMetadata: Codable {
     }
 }
 
+enum StringifyError: Error {
+    case isNotValidJSONObject
+}
+
+struct JSONStringify {
+    
+    let value: Any
+    
+    func stringify(prettyPrinted: Bool = false) throws -> String {
+        let options: JSONSerialization.WritingOptions = prettyPrinted ? .prettyPrinted : .init(rawValue: 0)
+        if JSONSerialization.isValidJSONObject(self.value) {
+            let data = try JSONSerialization.data(withJSONObject: self.value, options: options)
+            if let string = String(data: data, encoding: .utf8) {
+                return string
+                
+            }
+        }
+        throw StringifyError.isNotValidJSONObject
+    }
+}
+protocol Stringifiable {
+    func stringify(prettyPrinted: Bool) throws -> String
+}
+
+extension Stringifiable {
+    func stringify(prettyPrinted: Bool = false) throws -> String {
+        return try JSONStringify(value: self).stringify(prettyPrinted: prettyPrinted)
+    }
+}
+
+extension Dictionary: Stringifiable {}
+
 public class Broadcast {
     
     public init() {}
@@ -43,98 +75,134 @@ public class Broadcast {
     }
     
     public func reblog(account: String, author: String, permlink: String, completion:((JSONString) -> Void)?) {
-        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
-            "operations": [
-                ["custom_json", [
-                    "required_auths": [],
-                    "required_posting_auths": [account],
-                    "id": "follow",
-                    "json": [
-                        "reblog",
-                        [
-                            "account": account,
-                            "author": author,
-                            "permlink": permlink
-                        ]
-                    ]]
+        do {
+            let json = try JSONStringify(value: [
+                "reblog",
+                [
+                    "account": account,
+                    "author": author,
+                    "permlink": permlink
                 ]
-            ]
-        ], callback: completion!)
+            ]).stringify()
+            
+            Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+                "operations": [
+                    ["custom_json", [
+                        "required_auths": [],
+                        "required_posting_auths": [account],
+                        "id": "follow",
+                        "json": json
+                        ]
+                    ]
+                ]
+            ], callback: completion!)
+        } catch let error {
+            print(error)
+            completion!(["error": error])
+        }
     }
     
     public func customJSON(account: String, json: JSONString, completion:((JSONString) -> Void)?) {
-        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
-            "operations": [
-                ["custom_json", [
-                    "required_auths": [],
-                    "required_posting_auths": [account],
-                    "id": "follow",
-                    "json": json
-                ]
-            ]]
-        ], callback: completion!)
+        do {
+            let json = try JSONStringify(value: json).stringify()
+            
+            Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+                "operations": [
+                    ["custom_json", [
+                        "required_auths": [],
+                        "required_posting_auths": [account],
+                        "id": "follow",
+                        "json": json
+                        ]
+                    ]]
+            ], callback: completion!)
+        } catch let error {
+            print(error)
+            completion!(["error": error])
+        }
     }
     
     // PRAGMA MARK: FOLLOW API
     
     public func follow(follower: String, following: String, completion:((JSONString) -> Void)?) {
-        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
-            "operations": [
-                ["custom_json", [
-                    "required_auths": [],
-                    "required_posting_auths": [follower],
-                    "id": "follow",
-                    "json": [
-                        "follow",
-                        [
-                            "follower": follower,
-                            "following": following,
-                            "what": ["blog"]
-                        ]
-                    ]]
+        do {
+            let json = try JSONStringify(value: [
+                "follow",
+                [
+                    "follower": follower,
+                    "following": following,
+                    "what": ["blog"]
                 ]
-            ]
-        ], callback: completion!)
+            ]).stringify()
+            
+            Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+                "operations": [
+                    ["custom_json", [
+                        "required_auths": [],
+                        "required_posting_auths": [follower],
+                        "id": "follow",
+                        "json": json]
+                    ]
+                ]
+            ], callback: completion!)
+        } catch let error {
+            print(error)
+            completion!(["error": error])
+        }
     }
     
     public func unfollow(unfollower: String, unfollowing: String, completion:((JSONString) -> Void)?) {
-        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
-            "operations": [
-                ["custom_json", [
-                    "required_auths": [],
-                    "required_posting_auths": [unfollower],
-                    "id": "follow",
-                    "json": [
-                        "follow",
-                        [
-                            "follower": unfollower,
-                            "following": unfollowing,
-                            "what": []
-                        ]
-                    ]]
+        do {
+            let json = try JSONStringify(value: [
+                "follow",
+                [
+                    "follower": unfollower,
+                    "following": unfollowing,
+                    "what": []
                 ]
-            ]
-        ], callback: completion!)
+            ]).stringify()
+            
+            Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+                "operations": [
+                    ["custom_json", [
+                        "required_auths": [],
+                        "required_posting_auths": [unfollower],
+                        "id": "follow",
+                        "json": json]
+                    ]
+                ]
+            ], callback: completion!)
+        } catch let error {
+            print(error)
+            completion!(["error": error])
+        }
     }
     
     public func ignore(follower: String, following: String, completion:((JSONString) -> Void)?) {
-        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
-            "operations": [
-                ["custom_json", [
-                    "required_auths": [],
-                    "required_posting_auths": [follower],
-                    "id": "follow",
-                    "json": [
-                        "follow",
-                        [
-                            "follower": follower,
-                            "following": following,
-                            "what": ["ignore"]
-                        ]
-                    ]]
+        do {
+            let json = try JSONStringify(value: [
+                "follow",
+                [
+                    "follower": follower,
+                    "following": following,
+                    "what": ["ignore"]
                 ]
-            ]
-        ], callback: completion!)
+            ]).stringify()
+            
+            Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+                "operations": [
+                    ["custom_json", [
+                        "required_auths": [],
+                        "required_posting_auths": [follower],
+                        "id": "follow",
+                        "json": json]
+                    ]
+                ]
+            ], callback: completion!)
+        } catch let error {
+            print(error)
+            completion!(["error": error])
+        }
     }
     
     // PRAGMA MARK: CLAIM

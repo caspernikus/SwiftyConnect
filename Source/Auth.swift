@@ -70,13 +70,17 @@ public class Auth {
         return "https://v2.steemconnect.com/api"
     }
     
-    func call(url: String, data: JSONString, callback: @escaping ((JSONString) -> Swift.Void)) {
+    func call(url: String, data: NSDictionary, callback: @escaping ((JSONString) -> Swift.Void)) {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
             
-            var req = URLRequest(url: URL(string: self.getBasePath() + url)!)
+            var req = URLRequest(url: URL(string: "\(self.getBasePath())\(url)")!)
             req.httpMethod = "POST"
             req.httpBody = jsonData
+            
+            var headers = req.allHTTPHeaderFields ?? [:]
+            headers["Content-Type"] = "application/json"
+            req.allHTTPHeaderFields = headers
 
             loader.perform(request: req) { (response) in
                 if (response.response.statusCode != 200) {
@@ -164,6 +168,10 @@ public class Auth {
             var req = URLRequest(url: URL(string: self.getBasePath() + "/me")!)
             req.httpMethod = "PUT"
             req.httpBody = jsonData
+            
+            var headers = req.allHTTPHeaderFields ?? [:]
+            headers["Content-Type"] = "application/json"
+            req.allHTTPHeaderFields = headers
             
             loader.perform(request: req) { (response) in
                 do {
