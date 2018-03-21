@@ -3,14 +3,14 @@ SteemConnect Library for iOS / Swift
 
 ![](https://steemitimages.com/DQmXivu44ipw8FSyvnRHFQChzJYiteZjWTvXJdLDWtyikvS/wallpaper.png)
 
-## Current Version: 0.1
+## Current Version: 0.1.3
 
 ## Installation
 **Carthage**
 
 Installation via Carthage is easy enough:
 ```
-github "caspernikus/SwiftyConnect" ~> 0.1.2
+github "caspernikus/SwiftyConnect" ~> 0.1.3
 ```
 
 ## How To Use ?
@@ -140,3 +140,9 @@ public class Auth {
 - V1.0:
   - Full Documentation
   - Sign Actions
+  
+# Known Errors
+```
+["error-code": 500, "error": "internal server error"]
+```
+This basically means your data is wrong or your action is invalid (e.g voting a post you already have voted)
