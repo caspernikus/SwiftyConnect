@@ -1,7 +1,7 @@
 # SwiftyConnect
 SteemConnect Library for iOS / Swift
 
-![](https://steemitimages.com/DQmXivu44ipw8FSyvnRHFQChzJYiteZjWTvXJdLDWtyikvS/wallpaper.png)
+![swifty.png](https://steemitimages.com/DQmbskq3tikiLX1g3spZxrGqEkn5yx7nZv6EvCC2nvgCWxK/swifty.png)
 
 ## Current Version: 0.1.3
 
