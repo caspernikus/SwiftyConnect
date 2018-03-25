@@ -136,8 +136,129 @@ All Methods return a JSON / NSDictionary, to know what they return simply test i
 If a method failed you can check if `response["error"]` is not nil, it will return the error.
 
 #### API
-The naming and usage of the API is the same as in SteemJS, check out their docu for all methods!
-When fully tests are done I will provide a full documentation myself.
+
+```
+public class Api {
+
+    public func getTrendingTags(afterTag: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByTrending(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByCreated(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByActive(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByPayout(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByCashout(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByVotes(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByChildren(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByHot(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByFeed(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByBlog(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByComments(query: SwiftyConnect.QueryDiscussionsBy, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getBlock(blockNumber: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getBlockHeader(blockNumber: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getState(blockNumber: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getConfig(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDynamicGlobalProperties(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getChainProperties(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getFeedHistory(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getCurrentMedianHistoryPrice(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getHardforkVersion(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getNextScheduledHardfork(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getRewardFund(name: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getVestingDelegations(account: String, from: Int, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getKeyReferences(key: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getAccounts(accounts: [String], completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getAccountReferences(id: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func lookupAccountNames(accounts: [String], completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func lookupAccounts(lowerBoundName: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getAccountCount(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getConversionRequests(account: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getAccountHistory(name: String, from: Int, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getOwnerHistory(account: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getRecoveryRequest(account: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getOrderBook(limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getOpenOrders(name: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getLiquidityQueue(name: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getTransaction(trxId: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getTransactionHex(trx: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getRequiredSignatures(trx: Int, availableKeys: [String], completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getPotentialSignatures(trx: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func verifyAuthority(trx: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func verifyAccountAuthority(name: String, key: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getActiveVotes(author: String, permlink: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getAccountVotes(account: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getContent(author: String, permlink: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getContentReplies(author: String, permlink: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getDiscussionsByAuthorBeforeDate(author: String, startPermlink: String, beforeDate: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getRepliesByLastUpdate(author: String, permlink: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getWitnesses(witnessIds: [String], completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getWitnessByAccount(name: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getWitnessesByVote(from: Int, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func lookupWitnessAccounts(lowerBoundName: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getWitnessCount(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getActiveWitnesses(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getMinerQueue(completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getFollowers(name: String, start: String, type: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getFollowCount(account: String, completion: ((Any?, Any?) -> Swift.Void)?)
+
+    public func getFollowing(name: String, start: String, type: String, limit: Int, completion: ((Any?, Any?) -> Swift.Void)?)
+}
+```
 
 All Methods return a NSDictionary.
 
