@@ -3,7 +3,7 @@ SteemConnect Library for iOS / Swift
 
 ![swifty.png](https://steemitimages.com/DQmbskq3tikiLX1g3spZxrGqEkn5yx7nZv6EvCC2nvgCWxK/swifty.png)
 
-## Current Version: 0.1.3
+## Current Version: 0.1.4
 
 ## Installation
 **Carthage**
