@@ -5,21 +5,12 @@ SteemConnect Library for iOS / Swift
 
 ## Current Version: 0.1.4
 
-## Installation
-**Carthage**
-
-Installation via Carthage is easy enough:
-```
-github "caspernikus/SwiftyConnect" ~> 0.1.3
-```
-(When building SwiftyConnect the lib OAuth2 is also builded, there is no need to add OAuth2 inside your project, since SwiftyConenct contains OAuth2!)
-
 ### How To Use
 
 #### Installation
 **Carthage**
 ```
-github "caspernikus/SwiftyConnect" ~> 0.1.3
+github "caspernikus/SwiftyConnect" ~> 0.1.4
 ```
 (When building SwiftyConnect the lib OAuth2 is also builded, there is no need to add OAuth2 inside your project, since SwiftyConenct contains OAuth2!)
 
