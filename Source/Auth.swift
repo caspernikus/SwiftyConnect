@@ -113,7 +113,7 @@ public class Auth {
     }
     
     public func revoke(callback: @escaping ((Bool) -> Swift.Void)) {
-        var req = oauth2!.request(forURL: URL(string: "https://v2.steemconnect.com/api/oauth2/token/revoke")!)
+        var req = oauth2!.request(forURL: URL(string: "\(getBasePath())/oauth2/token/revoke")!)
         req.httpMethod = "POST"
 
         oauth2!.perform(request: req) { (response) in

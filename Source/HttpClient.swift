@@ -16,7 +16,7 @@ class HttpClient {
        self.api = api
     }
     
-    func useEndpoint(jsonData: Data, completion:((Error?, _ response: String?) -> Void)?) {
+    func useEndpoint(jsonData: Data, completion:((Any?, _ response: Any?) -> Void)?) {
         let url = URLComponents(string: api)?.url
 
         var request = URLRequest(url: url!)
@@ -37,7 +37,15 @@ class HttpClient {
             }
 
             if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-                completion?(nil, utf8Representation);
+                
+                let result = utf8Representation.toJSON()! as! NSDictionary
+                
+                if let error = result["error"] {
+                    completion?(error, nil);
+                    return;
+                }
+                
+                completion?(nil, result);
             } else {
                 print("no readable data received in response")
             }

@@ -7,70 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C114125A20641DDA0038E996 /* SwiftyConnect_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */; };
+		C114126920641E020038E996 /* SwiftyConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */; };
+		C114127020641E0B0038E996 /* SwiftyConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF68203AFE78000897C5 /* SwiftyConnectTests.swift */; };
+		C114128420641EE60038E996 /* SwiftySteem.h in Headers */ = {isa = PBXBuildFile; fileRef = C1DFDF6F203AFE78000897C5 /* SwiftySteem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C114128620641EF70038E996 /* SwiftySteem.h in Headers */ = {isa = PBXBuildFile; fileRef = C1DFDF6F203AFE78000897C5 /* SwiftySteem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C114128920641F090038E996 /* SwiftyConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF68203AFE78000897C5 /* SwiftyConnectTests.swift */; };
+		C114128A206420860038E996 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF66203AFE78000897C5 /* Info.plist */; };
+		C114128B2064208B0038E996 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF64203AFE78000897C5 /* Info.plist */; };
 		C143E12A205812E000C7B5B0 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C143E129205812DF00C7B5B0 /* OAuth2.framework */; };
 		C143E12C205812F500C7B5B0 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C143E12B205812F500C7B5B0 /* OAuth2.framework */; };
 		C143E1312058139300C7B5B0 /* OAuth2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C143E1302058139300C7B5B0 /* OAuth2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C143E133205813A700C7B5B0 /* OAuth2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C143E132205813A700C7B5B0 /* OAuth2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C14F256E203F0067003A42E5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F256D203F0067003A42E5 /* Tag.swift */; };
-		C14F256F203F0067003A42E5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F256D203F0067003A42E5 /* Tag.swift */; };
 		C14F2570203F0067003A42E5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F256D203F0067003A42E5 /* Tag.swift */; };
-		C14F2571203F0067003A42E5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F256D203F0067003A42E5 /* Tag.swift */; };
 		C14F2573203F007A003A42E5 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2572203F007A003A42E5 /* Accounts.swift */; };
-		C14F2574203F007A003A42E5 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2572203F007A003A42E5 /* Accounts.swift */; };
 		C14F2575203F007A003A42E5 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2572203F007A003A42E5 /* Accounts.swift */; };
-		C14F2576203F007A003A42E5 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2572203F007A003A42E5 /* Accounts.swift */; };
 		C14F2578203F0B45003A42E5 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2577203F0B45003A42E5 /* Misc.swift */; };
-		C14F2579203F0B45003A42E5 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2577203F0B45003A42E5 /* Misc.swift */; };
 		C14F257A203F0B45003A42E5 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2577203F0B45003A42E5 /* Misc.swift */; };
-		C14F257B203F0B45003A42E5 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F2577203F0B45003A42E5 /* Misc.swift */; };
 		C19C5CC62045933E0084304A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CC52045933E0084304A /* Broadcast.swift */; };
-		C19C5CC72045933E0084304A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CC52045933E0084304A /* Broadcast.swift */; };
 		C19C5CC82045933E0084304A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CC52045933E0084304A /* Broadcast.swift */; };
-		C19C5CC92045933E0084304A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CC52045933E0084304A /* Broadcast.swift */; };
 		C19C5CCB2046F8C60084304A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CCA2046F8C60084304A /* Auth.swift */; };
-		C19C5CCC2046F8C60084304A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CCA2046F8C60084304A /* Auth.swift */; };
 		C19C5CCD2046F8C60084304A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CCA2046F8C60084304A /* Auth.swift */; };
-		C19C5CCE2046F8C60084304A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C5CCA2046F8C60084304A /* Auth.swift */; };
-		C1DFDF32203AEB44000897C5 /* SwiftyConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */; };
-		C1DFDF50203AFA5E000897C5 /* SwiftyConnect_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */; };
-		C1DFDF72203AFE79000897C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF64203AFE78000897C5 /* Info.plist */; };
-		C1DFDF78203AFE79000897C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF66203AFE78000897C5 /* Info.plist */; };
-		C1DFDF7A203AFE79000897C5 /* SwiftySteemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF68203AFE78000897C5 /* SwiftySteemTests.swift */; };
-		C1DFDF7C203AFE79000897C5 /* SwiftySteemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF68203AFE78000897C5 /* SwiftySteemTests.swift */; };
 		C1DFDF7D203AFE79000897C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF6B203AFE78000897C5 /* Info.plist */; };
 		C1DFDF83203AFE79000897C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1DFDF6D203AFE78000897C5 /* Info.plist */; };
 		C1DFDF90203B0195000897C5 /* SwiftySteem.h in Headers */ = {isa = PBXBuildFile; fileRef = C1DFDF6F203AFE78000897C5 /* SwiftySteem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1DFDF91203B01A0000897C5 /* SwiftySteem.h in Headers */ = {isa = PBXBuildFile; fileRef = C1DFDF6F203AFE78000897C5 /* SwiftySteem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C1DFDF93203B01E0000897C5 /* SwiftySteem.h in Headers */ = {isa = PBXBuildFile; fileRef = C1DFDF6F203AFE78000897C5 /* SwiftySteem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C1DFDF95203B01EB000897C5 /* SwiftySteem.h in Headers */ = {isa = PBXBuildFile; fileRef = C1DFDF6F203AFE78000897C5 /* SwiftySteem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1DFDF98203C6969000897C5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF97203C6969000897C5 /* HttpClient.swift */; };
 		C1DFDF9A203C6A1D000897C5 /* Steem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF99203C6A1D000897C5 /* Steem.swift */; };
 		C1DFDF9B203C6C56000897C5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF97203C6969000897C5 /* HttpClient.swift */; };
-		C1DFDF9C203C6C76000897C5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF97203C6969000897C5 /* HttpClient.swift */; };
-		C1DFDF9D203C6C76000897C5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF97203C6969000897C5 /* HttpClient.swift */; };
-		C1DFDF9E203C6C78000897C5 /* Steem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF99203C6A1D000897C5 /* Steem.swift */; };
 		C1DFDF9F203C6C79000897C5 /* Steem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF99203C6A1D000897C5 /* Steem.swift */; };
-		C1DFDFA0203C6C79000897C5 /* Steem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF99203C6A1D000897C5 /* Steem.swift */; };
 		C1DFDFA2203C6E2D000897C5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDFA1203C6E2D000897C5 /* Api.swift */; };
-		C1DFDFA3203C6E2D000897C5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDFA1203C6E2D000897C5 /* Api.swift */; };
 		C1DFDFA4203C6E2D000897C5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDFA1203C6E2D000897C5 /* Api.swift */; };
-		C1DFDFA5203C6E2D000897C5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDFA1203C6E2D000897C5 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C1DFDF33203AEB44000897C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1DFDF15203AEA9C000897C5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C1DFDF1D203AEA9C000897C5;
-			remoteInfo = SwiftySteem;
-		};
-		C1DFDF51203AFA5E000897C5 /* PBXContainerItemProxy */ = {
+		C114125B20641DDA0038E996 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C1DFDF15203AEA9C000897C5 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C1DFDF3E203AFA4B000897C5;
-			remoteInfo = "SwiftySteem-macOS";
+			remoteInfo = "SwiftyConnect-macOS";
+		};
+		C114126A20641E020038E996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1DFDF15203AEA9C000897C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1DFDF1D203AEA9C000897C5;
+			remoteInfo = SwiftyConnect;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -98,6 +82,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C114125520641DDA0038E996 /* SwiftyConnect-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyConnect-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C114126420641E010038E996 /* SwiftyConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C143E129205812DF00C7B5B0 /* OAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2.framework; path = Carthage/Build/iOS/OAuth2.framework; sourceTree = "<group>"; };
 		C143E12B205812F500C7B5B0 /* OAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2.framework; path = Carthage/Build/Mac/OAuth2.framework; sourceTree = "<group>"; };
 		C143E1302058139300C7B5B0 /* OAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2.framework; path = Carthage/Build/iOS/OAuth2.framework; sourceTree = "<group>"; };
@@ -109,12 +95,10 @@
 		C19C5CC52045933E0084304A /* Broadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
 		C19C5CCA2046F8C60084304A /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1DFDF2D203AEB43000897C5 /* SwiftyConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyConnect_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1DFDF4B203AFA5E000897C5 /* SwiftyConnect-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyConnect-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DFDF64203AFE78000897C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1DFDF66203AFE78000897C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1DFDF68203AFE78000897C5 /* SwiftySteemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftySteemTests.swift; sourceTree = "<group>"; };
+		C1DFDF68203AFE78000897C5 /* SwiftyConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyConnectTests.swift; sourceTree = "<group>"; };
 		C1DFDF6B203AFE78000897C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1DFDF6D203AFE78000897C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1DFDF6F203AFE78000897C5 /* SwiftySteem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftySteem.h; sourceTree = "<group>"; };
@@ -124,6 +108,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C114125220641DDA0038E996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114125A20641DDA0038E996 /* SwiftyConnect_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C114126120641E010038E996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114126920641E020038E996 /* SwiftyConnect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1DFDF1A203AEA9C000897C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,27 +132,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1DFDF2A203AEB43000897C5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF32203AEB44000897C5 /* SwiftyConnect.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C1DFDF3B203AFA4B000897C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C143E12C205812F500C7B5B0 /* OAuth2.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1DFDF48203AFA5E000897C5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF50203AFA5E000897C5 /* SwiftyConnect_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,9 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */,
-				C1DFDF2D203AEB43000897C5 /* SwiftyConnectTests.xctest */,
 				C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */,
-				C1DFDF4B203AFA5E000897C5 /* SwiftyConnect-macOSTests.xctest */,
+				C114125520641DDA0038E996 /* SwiftyConnect-macOSTests.xctest */,
+				C114126420641E010038E996 /* SwiftyConnectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,7 +224,7 @@
 		C1DFDF67203AFE78000897C5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C1DFDF68203AFE78000897C5 /* SwiftySteemTests.swift */,
+				C1DFDF68203AFE78000897C5 /* SwiftyConnectTests.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -287,6 +271,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		C114128320641EDF0038E996 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114128420641EE60038E996 /* SwiftySteem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C114128520641EF00038E996 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114128620641EF70038E996 /* SwiftySteem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1DFDF1B203AEA9C000897C5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,25 +303,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1DFDF92203B01DB000897C5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF93203B01E0000897C5 /* SwiftySteem.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1DFDF94203B01E7000897C5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF95203B01EB000897C5 /* SwiftySteem.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C114125420641DDA0038E996 /* SwiftyConnect-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C114125D20641DDA0038E996 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOSTests" */;
+			buildPhases = (
+				C114125120641DDA0038E996 /* Sources */,
+				C114125220641DDA0038E996 /* Frameworks */,
+				C114125320641DDA0038E996 /* Resources */,
+				C114128520641EF00038E996 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C114125C20641DDA0038E996 /* PBXTargetDependency */,
+			);
+			name = "SwiftyConnect-macOSTests";
+			productName = "SwiftyConnect-macOSTests";
+			productReference = C114125520641DDA0038E996 /* SwiftyConnect-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C114126320641E010038E996 /* SwiftyConnectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C114126C20641E020038E996 /* Build configuration list for PBXNativeTarget "SwiftyConnectTests" */;
+			buildPhases = (
+				C114126020641E010038E996 /* Sources */,
+				C114126120641E010038E996 /* Frameworks */,
+				C114126220641E010038E996 /* Resources */,
+				C114128320641EDF0038E996 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C114126B20641E020038E996 /* PBXTargetDependency */,
+			);
+			name = SwiftyConnectTests;
+			productName = SwiftyConnectTests;
+			productReference = C114126420641E010038E996 /* SwiftyConnectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C1DFDF1D203AEA9C000897C5 /* SwiftyConnect */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1DFDF26203AEA9C000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect" */;
@@ -341,25 +363,6 @@
 			productName = SwiftySteem;
 			productReference = C1DFDF1E203AEA9C000897C5 /* SwiftyConnect.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		C1DFDF2C203AEB43000897C5 /* SwiftyConnectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C1DFDF35203AEB44000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnectTests" */;
-			buildPhases = (
-				C1DFDF29203AEB43000897C5 /* Sources */,
-				C1DFDF2A203AEB43000897C5 /* Frameworks */,
-				C1DFDF2B203AEB43000897C5 /* Resources */,
-				C1DFDF92203B01DB000897C5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C1DFDF34203AEB44000897C5 /* PBXTargetDependency */,
-			);
-			name = SwiftyConnectTests;
-			productName = SwiftySteemTests;
-			productReference = C1DFDF2D203AEB43000897C5 /* SwiftyConnectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C1DFDF3E203AFA4B000897C5 /* SwiftyConnect-macOS */ = {
 			isa = PBXNativeTarget;
@@ -381,25 +384,6 @@
 			productReference = C1DFDF3F203AFA4B000897C5 /* SwiftyConnect_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C1DFDF4A203AFA5E000897C5 /* SwiftyConnect-macOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C1DFDF53203AFA5E000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOSTests" */;
-			buildPhases = (
-				C1DFDF47203AFA5E000897C5 /* Sources */,
-				C1DFDF48203AFA5E000897C5 /* Frameworks */,
-				C1DFDF49203AFA5E000897C5 /* Resources */,
-				C1DFDF94203B01E7000897C5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C1DFDF52203AFA5E000897C5 /* PBXTargetDependency */,
-			);
-			name = "SwiftyConnect-macOSTests";
-			productName = "SwiftySteem-macOSTests";
-			productReference = C1DFDF4B203AFA5E000897C5 /* SwiftyConnect-macOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -410,22 +394,20 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "benedikt-veith";
 				TargetAttributes = {
+					C114125420641DDA0038E996 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					C114126320641E010038E996 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					C1DFDF1D203AEA9C000897C5 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
-					C1DFDF2C203AEB43000897C5 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
-					};
 					C1DFDF3E203AFA4B000897C5 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
-					};
-					C1DFDF4A203AFA5E000897C5 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
@@ -445,14 +427,30 @@
 			projectRoot = "";
 			targets = (
 				C1DFDF1D203AEA9C000897C5 /* SwiftyConnect */,
-				C1DFDF2C203AEB43000897C5 /* SwiftyConnectTests */,
+				C114126320641E010038E996 /* SwiftyConnectTests */,
 				C1DFDF3E203AFA4B000897C5 /* SwiftyConnect-macOS */,
-				C1DFDF4A203AFA5E000897C5 /* SwiftyConnect-macOSTests */,
+				C114125420641DDA0038E996 /* SwiftyConnect-macOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C114125320641DDA0038E996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114128A206420860038E996 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C114126220641E010038E996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114128B2064208B0038E996 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1DFDF1C203AEA9C000897C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,27 +459,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1DFDF2B203AEB43000897C5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF72203AFE79000897C5 /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C1DFDF3D203AFA4B000897C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C1DFDF83203AFE79000897C5 /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1DFDF49203AFA5E000897C5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF78203AFE79000897C5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +503,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C114125120641DDA0038E996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114127020641E0B0038E996 /* SwiftyConnectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C114126020641E010038E996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C114128920641F090038E996 /* SwiftyConnectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1DFDF19203AEA9C000897C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,22 +531,6 @@
 				C1DFDF9A203C6A1D000897C5 /* Steem.swift in Sources */,
 				C14F2578203F0B45003A42E5 /* Misc.swift in Sources */,
 				C19C5CCB2046F8C60084304A /* Auth.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1DFDF29203AEB43000897C5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF9C203C6C76000897C5 /* HttpClient.swift in Sources */,
-				C1DFDF9E203C6C78000897C5 /* Steem.swift in Sources */,
-				C14F2579203F0B45003A42E5 /* Misc.swift in Sources */,
-				C14F256F203F0067003A42E5 /* Tag.swift in Sources */,
-				C1DFDFA3203C6E2D000897C5 /* Api.swift in Sources */,
-				C19C5CC72045933E0084304A /* Broadcast.swift in Sources */,
-				C1DFDF7A203AFE79000897C5 /* SwiftySteemTests.swift in Sources */,
-				C14F2574203F007A003A42E5 /* Accounts.swift in Sources */,
-				C19C5CCC2046F8C60084304A /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,38 +549,100 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1DFDF47203AFA5E000897C5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1DFDF9D203C6C76000897C5 /* HttpClient.swift in Sources */,
-				C1DFDFA0203C6C79000897C5 /* Steem.swift in Sources */,
-				C14F257B203F0B45003A42E5 /* Misc.swift in Sources */,
-				C14F2571203F0067003A42E5 /* Tag.swift in Sources */,
-				C1DFDFA5203C6E2D000897C5 /* Api.swift in Sources */,
-				C19C5CC92045933E0084304A /* Broadcast.swift in Sources */,
-				C1DFDF7C203AFE79000897C5 /* SwiftySteemTests.swift in Sources */,
-				C14F2576203F007A003A42E5 /* Accounts.swift in Sources */,
-				C19C5CCE2046F8C60084304A /* Auth.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C1DFDF34203AEB44000897C5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C1DFDF1D203AEA9C000897C5 /* SwiftyConnect */;
-			targetProxy = C1DFDF33203AEB44000897C5 /* PBXContainerItemProxy */;
-		};
-		C1DFDF52203AFA5E000897C5 /* PBXTargetDependency */ = {
+		C114125C20641DDA0038E996 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C1DFDF3E203AFA4B000897C5 /* SwiftyConnect-macOS */;
-			targetProxy = C1DFDF51203AFA5E000897C5 /* PBXContainerItemProxy */;
+			targetProxy = C114125B20641DDA0038E996 /* PBXContainerItemProxy */;
+		};
+		C114126B20641E020038E996 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1DFDF1D203AEA9C000897C5 /* SwiftyConnect */;
+			targetProxy = C114126A20641E020038E996 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C114125E20641DDA0038E996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AS862FT35H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Tests/Assets/macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftyConnect-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		C114125F20641DDA0038E996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AS862FT35H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Tests/Assets/macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftyConnect-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		C114126D20641E020038E996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AS862FT35H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Assets/iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftyConnectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C114126E20641E020038E996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AS862FT35H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Assets/iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftyConnectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C1DFDF24203AEA9C000897C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -781,59 +825,6 @@
 			};
 			name = Release;
 		};
-		C1DFDF36203AEB44000897C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AS862FT35H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Assets/iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftySteemTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/secp256k1";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C1DFDF37203AEB44000897C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AS862FT35H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Assets/iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftySteemTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/secp256k1";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		C1DFDF45203AFA4B000897C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -909,68 +900,27 @@
 			};
 			name = Release;
 		};
-		C1DFDF54203AFA5E000897C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AS862FT35H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Assets/macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftySteem-macOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/secp256k1";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		C1DFDF55203AFA5E000897C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AS862FT35H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Assets/macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.benedikt-veith.SwiftySteem-macOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/secp256k1";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C114125D20641DDA0038E996 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C114125E20641DDA0038E996 /* Debug */,
+				C114125F20641DDA0038E996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C114126C20641E020038E996 /* Build configuration list for PBXNativeTarget "SwiftyConnectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C114126D20641E020038E996 /* Debug */,
+				C114126E20641E020038E996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C1DFDF18203AEA9C000897C5 /* Build configuration list for PBXProject "SwiftyConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -989,29 +939,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1DFDF35203AEB44000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C1DFDF36203AEB44000897C5 /* Debug */,
-				C1DFDF37203AEB44000897C5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C1DFDF44203AFA4B000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1DFDF45203AFA4B000897C5 /* Debug */,
 				C1DFDF46203AFA4B000897C5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C1DFDF53203AFA5E000897C5 /* Build configuration list for PBXNativeTarget "SwiftyConnect-macOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C1DFDF54203AFA5E000897C5 /* Debug */,
-				C1DFDF55203AFA5E000897C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

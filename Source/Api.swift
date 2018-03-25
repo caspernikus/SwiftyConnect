@@ -21,13 +21,24 @@ public class Api {
     
     public init() {}
     
+    let config_default : NSDictionary = [
+        "api": "https://api.steemit.com"
+    ]
+    
     init(config: NSDictionary) {
-        self.client = HttpClient(api: config["api"] as! String)
+        var configUsed = config
+        let apiUri = configUsed["api"] as? String
+        
+        if apiUri == nil {
+            configUsed = self.config_default
+        }
+        
+        self.client = HttpClient(api: configUsed["api"] as! String)
     }
 
     // PRAGMA MARK: TAGS
     
-    public func getTrendingTags(afterTag: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getTrendingTags(afterTag: String, limit: Int, completion:((Any?, _ response: Any?) -> Void)?) {
         let getTrendingTags: GetTrendingTags = GetTrendingTags(jsonrpc: "2.0", id: 1, method: "get_trending_tags", params: [afterTag, String(limit)])
         
         let encoder = JSONEncoder()
@@ -40,7 +51,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
                 //      TODO: REPLACE JSON WITH CODABLES !
 //                if let responseData = try? JSONDecoder().decode(ResponseGetTrendingTags.self, from: response!) {
 //                    completion?(nil, responseData)
@@ -56,7 +67,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByTrending(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByTrending(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_trending", params: [query])
         
         let encoder = JSONEncoder()
@@ -69,7 +80,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_trending; Query Object: \(query);");
@@ -77,7 +88,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByCreated(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByCreated(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_created", params: [query])
         
         let encoder = JSONEncoder()
@@ -90,7 +101,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_created; Query Object: \(query);");
@@ -98,7 +109,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByActive(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByActive(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_active", params: [query])
         
         let encoder = JSONEncoder()
@@ -111,7 +122,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_active; Query Object: \(query);");
@@ -119,7 +130,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByPayout(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByPayout(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_payout", params: [query])
         
         let encoder = JSONEncoder()
@@ -132,7 +143,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_payout; Query Object: \(query);");
@@ -140,7 +151,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByCashout(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByCashout(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_cashout", params: [query])
         
         let encoder = JSONEncoder()
@@ -153,7 +164,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_cashout; Query Object: \(query);");
@@ -161,7 +172,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByVotes(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByVotes(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_votes", params: [query])
         
         let encoder = JSONEncoder()
@@ -174,7 +185,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_votes; Query Object: \(query);");
@@ -182,7 +193,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByChildren(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByChildren(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_children", params: [query])
         
         let encoder = JSONEncoder()
@@ -195,7 +206,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_children; Query Object: \(query);");
@@ -203,7 +214,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByHot(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByHot(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_hot", params: [query])
         
         let encoder = JSONEncoder()
@@ -216,7 +227,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_hot; Query Object: \(query);");
@@ -224,7 +235,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByFeed(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByFeed(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_feed", params: [query])
         
         let encoder = JSONEncoder()
@@ -237,7 +248,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_feed; Query Object: \(query);");
@@ -245,7 +256,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByBlog(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByBlog(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_blog", params: [query])
         
         let encoder = JSONEncoder()
@@ -258,7 +269,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_blog; Query Object: \(query);");
@@ -266,7 +277,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByComments(query: QueryDiscussionsBy, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByComments(query: QueryDiscussionsBy, completion:((Any?, Any?) -> Void)?) {
         let getDiscussionsByTrending: GetDiscussionsBy = GetDiscussionsBy(jsonrpc: "2.0", id: 1, method: "get_discussions_by_comments", params: [query])
         
         let encoder = JSONEncoder()
@@ -279,7 +290,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_comments; Query Object: \(query);");
@@ -289,7 +300,7 @@ public class Api {
     
     // PRAGMA MARK: BLOCKS AND TRANSACTIONS
     
-    public func getBlock(blockNumber: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getBlock(blockNumber: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleIntParam = SingleIntParam(jsonrpc: "2.0", id: 1, method: "get_block", params: [blockNumber])
         
         let encoder = JSONEncoder()
@@ -302,7 +313,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_block; Block Number: \(blockNumber)");
@@ -310,7 +321,7 @@ public class Api {
         }
     }
     
-    public func getBlockHeader(blockNumber: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getBlockHeader(blockNumber: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleIntParam = SingleIntParam(jsonrpc: "2.0", id: 1, method: "get_block_header", params: [blockNumber])
         
         let encoder = JSONEncoder()
@@ -323,7 +334,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_block_header; Block Number: \(blockNumber)");
@@ -331,7 +342,7 @@ public class Api {
         }
     }
     
-    public func getState(blockNumber: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getState(blockNumber: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleIntParam = SingleIntParam(jsonrpc: "2.0", id: 1, method: "get_state", params: [blockNumber])
         
         let encoder = JSONEncoder()
@@ -344,7 +355,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_state; Block Number: \(blockNumber)");
@@ -354,7 +365,7 @@ public class Api {
     
     // PRAGMA MARK: GLOBALS
     
-    public func getConfig(completion:((Error?, Any?) -> Void)?) {
+    public func getConfig(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_config")
         
         let encoder = JSONEncoder()
@@ -367,7 +378,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_config;")
@@ -375,7 +386,7 @@ public class Api {
         }
     }
     
-    public func getDynamicGlobalProperties(completion:((Error?, Any?) -> Void)?) {
+    public func getDynamicGlobalProperties(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_dynamic_global_properties")
         
         let encoder = JSONEncoder()
@@ -388,7 +399,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_dynamic_global_properties;")
@@ -396,7 +407,7 @@ public class Api {
         }
     }
     
-    public func getChainProperties(completion:((Error?, Any?) -> Void)?) {
+    public func getChainProperties(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_chain_properties")
         
         let encoder = JSONEncoder()
@@ -409,7 +420,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_chain_properties;")
@@ -417,7 +428,7 @@ public class Api {
         }
     }
     
-    public func getFeedHistory(completion:((Error?, Any?) -> Void)?) {
+    public func getFeedHistory(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_feed_history")
         
         let encoder = JSONEncoder()
@@ -430,7 +441,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_feed_history;")
@@ -438,7 +449,7 @@ public class Api {
         }
     }
     
-    public func getCurrentMedianHistoryPrice(completion:((Error?, Any?) -> Void)?) {
+    public func getCurrentMedianHistoryPrice(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_current_median_history_price")
         
         let encoder = JSONEncoder()
@@ -451,7 +462,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_current_median_history_price;")
@@ -459,7 +470,7 @@ public class Api {
         }
     }
     
-    public func getHardforkVersion(completion:((Error?, Any?) -> Void)?) {
+    public func getHardforkVersion(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_hardfork_version")
         
         let encoder = JSONEncoder()
@@ -472,7 +483,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_hardfork_version;")
@@ -480,7 +491,7 @@ public class Api {
         }
     }
     
-    public func getNextScheduledHardfork(completion:((Error?, Any?) -> Void)?) {
+    public func getNextScheduledHardfork(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_next_scheduled_hardfork")
         
         let encoder = JSONEncoder()
@@ -493,7 +504,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_next_scheduled_hardfork;")
@@ -501,7 +512,7 @@ public class Api {
         }
     }
     
-    public func getRewardFund(name: String, completion:((Error?, Any?) -> Void)?) {
+    public func getRewardFund(name: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_reward_fund", params: [name])
         
         let encoder = JSONEncoder()
@@ -514,7 +525,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_reward_fund;")
@@ -522,7 +533,7 @@ public class Api {
         }
     }
     
-    public func getVestingDelegations(account: String, from: Int, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getVestingDelegations(account: String, from: Int, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_vesting_delegations", params: [account, String(from), String(limit)])
         
         let encoder = JSONEncoder()
@@ -535,7 +546,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_vesting_delegations;")
@@ -545,7 +556,7 @@ public class Api {
     
     // PRAGMA MARK: KEYS
     
-    public func getKeyReferences(key: String, completion:((Error?, Any?) -> Void)?) {
+    public func getKeyReferences(key: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
                 "jsonrpc": "2.0",
                 "id": 1,
@@ -562,7 +573,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_key_references; KEY: \(key)")
@@ -572,7 +583,7 @@ public class Api {
     
     // PRAGMA MARK: ACCOUNTS
     
-    public func getAccounts(accounts: [String], completion:((Error?, Any?) -> Void)?) {
+    public func getAccounts(accounts: [String], completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: GetAccounts = GetAccounts(jsonrpc: "2.0", id: 1, method: "get_accounts", params: [accounts])
         
         let encoder = JSONEncoder()
@@ -585,7 +596,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_accounts; Data: \(accounts)");
@@ -593,7 +604,7 @@ public class Api {
         }
     }
     
-    public func getAccountReferences(id: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getAccountReferences(id: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleIntParam = SingleIntParam(jsonrpc: "2.0", id: 1, method: "get_account_references", params: [id])
         
         let encoder = JSONEncoder()
@@ -606,7 +617,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_account_references; ID: \(id)");
@@ -614,7 +625,7 @@ public class Api {
         }
     }
     
-    public func lookupAccountNames(accounts: [String], completion:((Error?, Any?) -> Void)?) {
+    public func lookupAccountNames(accounts: [String], completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: GetAccounts = GetAccounts(jsonrpc: "2.0", id: 1, method: "lookup_account_names", params: [accounts])
         
         let encoder = JSONEncoder()
@@ -627,7 +638,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - lookup_account_names; Data: \(accounts)");
@@ -635,7 +646,7 @@ public class Api {
         }
     }
     
-    public func lookupAccounts(lowerBoundName: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func lookupAccounts(lowerBoundName: String, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -652,7 +663,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - lookup_accounts; Lower Bundle Name: \(lowerBoundName); Limit: \(limit)")
@@ -660,8 +671,8 @@ public class Api {
         }
     }
     
-    public func getAccountCount(completion:((Error?, Any?) -> Void)?) {
-        let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_account_count_c")
+    public func getAccountCount(completion:((Any?, Any?) -> Void)?) {
+        let getAccountsData: EmptyParam = EmptyParam(jsonrpc: "2.0", id: 1, method: "get_account_count")
         
         let encoder = JSONEncoder()
         do {
@@ -673,15 +684,15 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
-            print("Error parsing JSON Data - get_account_count_c;")
+            print("Error parsing JSON Data - get_account_count;")
             return
         }
     }
     
-    public func getConversionRequests(account: String, completion:((Error?, Any?) -> Void)?) {
+    public func getConversionRequests(account: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_conversion_requests", params: [account])
         
         let encoder = JSONEncoder()
@@ -694,7 +705,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_conversion_requests; Account: \(account)");
@@ -702,7 +713,7 @@ public class Api {
         }
     }
     
-    public func getAccountHistory(name: String, from: Int, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getAccountHistory(name: String, from: Int, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_account_history", params: [name, String(from), String(limit)])
         
         let encoder = JSONEncoder()
@@ -715,7 +726,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_accounts; Name: \(name); From: \(from); Limit: \(limit)");
@@ -723,7 +734,7 @@ public class Api {
         }
     }
     
-    public func getOwnerHistory(account: String, completion:((Error?, Any?) -> Void)?) {
+    public func getOwnerHistory(account: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_owner_history", params: [account])
         
         let encoder = JSONEncoder()
@@ -736,7 +747,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_owner_history; Account: \(account)");
@@ -744,7 +755,7 @@ public class Api {
         }
     }
     
-    public func getRecoveryRequest(account: String, completion:((Error?, Any?) -> Void)?) {
+    public func getRecoveryRequest(account: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_recovery_request", params: [account])
         
         let encoder = JSONEncoder()
@@ -757,7 +768,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_recovery_request; Account: \(account)");
@@ -767,7 +778,7 @@ public class Api {
     
     // PRAGMA MARK: MARKET
 
-    public func getOrderBook(limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getOrderBook(limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleIntParam = SingleIntParam(jsonrpc: "2.0", id: 1, method: "get_order_book", params: [limit])
         
         let encoder = JSONEncoder()
@@ -780,7 +791,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_order_book; Limit: \(limit)");
@@ -788,7 +799,7 @@ public class Api {
         }
     }
     
-    public func getOpenOrders(name: String, completion:((Error?, Any?) -> Void)?) {
+    public func getOpenOrders(name: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_open_orders", params: [name])
         
         let encoder = JSONEncoder()
@@ -801,7 +812,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_open_orders; Name: \(name)");
@@ -809,7 +820,7 @@ public class Api {
         }
     }
     
-    public func getLiquidityQueue(name: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getLiquidityQueue(name: String, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleStringParam = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_liquidity_queue", params: [name, String(limit)])
         
         let encoder = JSONEncoder()
@@ -822,7 +833,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_liquidity_queue; Name: \(name); Limit: \(limit)");
@@ -832,7 +843,7 @@ public class Api {
     
     // PRAGMA MARK: AUTHORITY / VALIDATION
     
-    public func getTransaction(trxId: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getTransaction(trxId: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData: SingleIntParam = SingleIntParam(jsonrpc: "2.0", id: 1, method: "get_transaction", params: [trxId])
         
         let encoder = JSONEncoder()
@@ -845,7 +856,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_transaction; TrxId: \(trxId)");
@@ -853,7 +864,7 @@ public class Api {
         }
     }
     
-    public func getTransactionHex(trx: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getTransactionHex(trx: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -870,7 +881,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_transaction_hex; Trx: \(trx)");
@@ -878,7 +889,7 @@ public class Api {
         }
     }
     
-    public func getRequiredSignatures(trx: Int, availableKeys: [String], completion:((Error?, Any?) -> Void)?) {
+    public func getRequiredSignatures(trx: Int, availableKeys: [String], completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -895,7 +906,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_required_signatures; Trx: \(trx)");
@@ -903,7 +914,7 @@ public class Api {
         }
     }
     
-    public func getPotentialSignatures(trx: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getPotentialSignatures(trx: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -920,7 +931,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_potential_signatures; Trx: \(trx)");
@@ -928,7 +939,7 @@ public class Api {
         }
     }
     
-    public func verifyAuthority(trx: Int, completion:((Error?, Any?) -> Void)?) {
+    public func verifyAuthority(trx: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -945,7 +956,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - verify_authority; Trx: \(trx)");
@@ -953,7 +964,7 @@ public class Api {
         }
     }
     
-    public func verifyAccountAuthority(name: String, key: String, completion:((Error?, Any?) -> Void)?) {
+    public func verifyAccountAuthority(name: String, key: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -970,7 +981,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - verify_account_authority; Name: \(name); Key: \(key)");
@@ -978,7 +989,7 @@ public class Api {
         }
     }
     
-    public func getActiveVotes(author: String, permlink: String, completion:((Error?, Any?) -> Void)?) {
+    public func getActiveVotes(author: String, permlink: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_active_votes", params: [author, permlink])
         
         let encoder = JSONEncoder()
@@ -991,7 +1002,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_active_votes; Author: \(author); Permlink: \(permlink)");
@@ -999,7 +1010,7 @@ public class Api {
         }
     }
     
-    public func getAccountVotes(account: String, completion:((Error?, Any?) -> Void)?) {
+    public func getAccountVotes(account: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_account_votes", params: [account])
         
         let encoder = JSONEncoder()
@@ -1012,7 +1023,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_account_votes; Account: \(account)");
@@ -1020,7 +1031,7 @@ public class Api {
         }
     }
     
-    public func getContent(author: String, permlink: String, completion:((Error?, Any?) -> Void)?) {
+    public func getContent(author: String, permlink: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_content", params: [author, permlink])
         
         let encoder = JSONEncoder()
@@ -1033,7 +1044,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_content; Author: \(author); Permlink: \(permlink)");
@@ -1041,7 +1052,7 @@ public class Api {
         }
     }
     
-    public func getContentReplies(author: String, permlink: String, completion:((Error?, Any?) -> Void)?) {
+    public func getContentReplies(author: String, permlink: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_content_replies", params: [author, permlink])
         
         let encoder = JSONEncoder()
@@ -1054,7 +1065,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_content_replies; Author: \(author); Permlink: \(permlink)");
@@ -1062,7 +1073,7 @@ public class Api {
         }
     }
     
-    public func getDiscussionsByAuthorBeforeDate(author: String, startPermlink: String, beforeDate: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getDiscussionsByAuthorBeforeDate(author: String, startPermlink: String, beforeDate: String, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_discussions_by_author_before_date", params: [author, startPermlink, beforeDate, String(limit)])
         
         let encoder = JSONEncoder()
@@ -1075,7 +1086,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_discussions_by_author_before_date; Author: \(author); startPermlink: \(startPermlink); beforeDate: \(beforeDate); limit: \(limit)");
@@ -1083,7 +1094,7 @@ public class Api {
         }
     }
     
-    public func getRepliesByLastUpdate(author: String, permlink: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getRepliesByLastUpdate(author: String, permlink: String, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData = SingleStringParam(jsonrpc: "2.0", id: 1, method: "get_replies_by_last_update", params: [author, permlink, String(limit)])
         
         let encoder = JSONEncoder()
@@ -1096,7 +1107,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_replies_by_last_update; author: \(author); permlink: \(permlink); limit: \(limit)");
@@ -1106,7 +1117,7 @@ public class Api {
     
     //PRAGMA MARK: WITNESSES
     
-    public func getWitnesses(witnessIds: [String], completion:((Error?, Any?) -> Void)?) {
+    public func getWitnesses(witnessIds: [String], completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1123,7 +1134,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_witnesses; witnessIds: \(witnessIds)");
@@ -1131,7 +1142,7 @@ public class Api {
         }
     }
     
-    public func getWitnessByAccount(name: String, completion:((Error?, Any?) -> Void)?) {
+    public func getWitnessByAccount(name: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1148,7 +1159,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_witness_by_account; Name: \(name)");
@@ -1156,7 +1167,7 @@ public class Api {
         }
     }
     
-    public func getWitnessesByVote(from: Int, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getWitnessesByVote(from: Int, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1173,7 +1184,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_witnesses_by_vote; From: \(from); Limit: \(limit)");
@@ -1181,7 +1192,7 @@ public class Api {
         }
     }
     
-    public func lookupWitnessAccounts(lowerBoundName: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func lookupWitnessAccounts(lowerBoundName: String, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1198,7 +1209,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - lookup_witness_accounts; lowerBoundName: \(lowerBoundName); limit: \(limit)");
@@ -1206,7 +1217,7 @@ public class Api {
         }
     }
     
-    public func getWitnessCount(completion:((Error?, Any?) -> Void)?) {
+    public func getWitnessCount(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1222,7 +1233,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_witness_count;");
@@ -1230,7 +1241,7 @@ public class Api {
         }
     }
     
-    public func getActiveWitnesses(completion:((Error?, Any?) -> Void)?) {
+    public func getActiveWitnesses(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1246,7 +1257,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_active_witnesses;");
@@ -1254,7 +1265,7 @@ public class Api {
         }
     }
     
-    public func getMinerQueue(completion:((Error?, Any?) -> Void)?) {
+    public func getMinerQueue(completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1270,7 +1281,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_miner_queue;");
@@ -1280,12 +1291,12 @@ public class Api {
     
     //PRAGMA MARK: FOLLOW
     
-    public func getFollowers(name: String, start: Int, type: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getFollowers(name: String, start: String, type: String, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
             "method": "call",
-            "params": ["follow_api", "get_followers", [name, String(start), type, String(limit)]]
+            "params": ["follow_api", "get_followers", [name, start, type, String(limit)]]
         ];
         
         do {
@@ -1297,7 +1308,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_followers;");
@@ -1305,7 +1316,7 @@ public class Api {
         }
     }
     
-    public func getFollowCount(account: String, completion:((Error?, Any?) -> Void)?) {
+    public func getFollowCount(account: String, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
@@ -1322,7 +1333,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_followers;");
@@ -1330,12 +1341,12 @@ public class Api {
         }
     }
     
-    public func getFollowing(name: String, start: Int, type: String, limit: Int, completion:((Error?, Any?) -> Void)?) {
+    public func getFollowing(name: String, start: String, type: String, limit: Int, completion:((Any?, Any?) -> Void)?) {
         let getAccountsData : [String : Any] = [
             "jsonrpc": "2.0",
             "id": 1,
             "method": "call",
-            "params": ["follow_api", "get_following", [name, String(start), type, String(limit)]]
+            "params": ["follow_api", "get_following", [name, start, type, String(limit)]]
         ];
         
         do {
@@ -1347,7 +1358,7 @@ public class Api {
                     return
                 }
                 
-                completion!(nil, response?.toJSON())
+                completion!(nil, response)
             }
         } catch {
             print("Error parsing JSON Data - get_following;");
