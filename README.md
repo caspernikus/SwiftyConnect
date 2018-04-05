@@ -3,14 +3,14 @@ SteemConnect Library for iOS / Swift
 
 ![swifty.png](https://raw.githubusercontent.com/caspernikus/SwiftyConnect/master/wallpaper.png)
 
-## Current Version: 0.1.4
+## Current Version: 0.1.5
 
 ### How To Use
 
 #### Installation
 **Carthage**
 ```
-github "caspernikus/SwiftyConnect" ~> 0.1.4
+github "caspernikus/SwiftyConnect" ~> 0.1.5
 ```
 (When building SwiftyConnect the lib OAuth2 is also builded, there is no need to add OAuth2 inside your project, since SwiftyConenct contains OAuth2!)
 
@@ -62,11 +62,12 @@ Now we want to tell our App it should listen for schemes with the name `testauth
 		</dict>
 </array>
 ```
-#### SwiftyConnects 3 Classes
-SwiftyConnects has 3 classes you can call from the Steem Class:
+#### SwiftyConnects 4 Classes
+SwiftyConnects has 4 classes you can call from the Steem Class:
 - Auth (Authorize)
 - API (Fetch data)
 - Broadcast (Send data)
+- Helper (Useful functions / calculations)
 
 #### Authorization & Revoking 
 Use `authorize` to authorize the user and open the SteemConnect Login Page in Safari
@@ -263,6 +264,32 @@ public class Api {
 All Methods return a NSDictionary.
 
 **Reminder:** There is a lack of Unit Tests for the API, currently I do not know if every method works as expected ! But try it out yourself, I guess most of them will work !
+
+#### Helper
+The Helper Class can be used for easy calculation or useful functions which probably every app needs!
+Currently there exist 4 functions which can be used:
+
+```
+public func calculateSteempower(vestingShares: String, callback:((Any?, Float?) -> Void)?)
+
+public func getVotingPower(votingPower: Int, lastVoteTime: String) -> Double
+
+public func createCommentPermlink(parentAuthor: String, parentPermlink: String) -> String
+
+public func reputation(rawReputation: Double) -> Double
+```
+
+**calculateSteempower**
+Only needs the vestingShares of a user account, it fetches the global properties itself. It returns always a callback(error, steempower)
+
+**getVotingPower**
+Needs the voting power of an user and the last voting time (both can be found via getAccounts), it calculates the currently voting power percentage out of it.
+
+**createCommentPermlink**
+Can be used to create comment permlinks (e.g re-moonrise-hello-{timestamp})
+
+**reputation**
+Converts the reputation into an readable state
 
 # Roadmap
 - V0.2:
