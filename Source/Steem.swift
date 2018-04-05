@@ -14,12 +14,14 @@ public class Steem {
     public var api : Api!
     public var broadcast : Broadcast!
     public var auth : Auth!
+    public var helper : Helper!
     
     public init() {}
     
     public func initialize(config: NSDictionary) {
         api = Api(config: config)
         auth = Auth()
+        helper = Helper()
         broadcast = Broadcast()
     }
 }

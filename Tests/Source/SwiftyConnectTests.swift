@@ -23,6 +23,28 @@ class SwiftyConnectTests: XCTestCase {
         super.tearDown()
     }
     
+    func test_helpers() {
+        let expectations = expectation(description: "Wait for calculate_steempower to load.")
+        
+        Steem.sharedInstance.helper.calculateSteempower(vestingShares: "675898.790497 VESTS") { (error, steempower) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        let vp = Steem.sharedInstance.helper.getVotingPower(votingPower: 10000, lastVoteTime: "2018-04-05T06:55:03")
+        
+        XCTAssert(vp == 100.0)
+        
+        let rep = Steem.sharedInstance.helper.reputation(rawReputation: 7677323209728)
+        
+        XCTAssert(rep == 59.0)
+    }
+    
     func test_accounts() {
         var expectations = expectation(description: "Wait for get_accounts to load.")
 
@@ -30,7 +52,7 @@ class SwiftyConnectTests: XCTestCase {
             if error != nil {
                 return;
             }
-            
+
             expectations.fulfill()
         }
         
@@ -51,6 +73,78 @@ class SwiftyConnectTests: XCTestCase {
         expectations = expectation(description: "Wait for get_account_count to load.")
         
         Steem.sharedInstance.api.getAccountCount { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+//        expectations = expectation(description: "Wait for get_account_references to load.")
+//
+//        Steem.sharedInstance.api.getAccountReferences(id: 1) { (error, response) in
+//            if error != nil {
+//                return;
+//            }
+//
+//            expectations.fulfill()
+//        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for lookup_account_names to load.")
+        
+        Steem.sharedInstance.api.lookupAccountNames(accounts: ["moonrise"]) { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for lookup_accounts to load.")
+        
+        Steem.sharedInstance.api.lookupAccounts(lowerBoundName: "moon", limit: 1) { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_conversion_requests to load.")
+        
+        Steem.sharedInstance.api.getConversionRequests(account: "moonrise") { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_owner_history to load.")
+        
+        Steem.sharedInstance.api.getOwnerHistory(account: "moonrise") { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_recovery_request to load.")
+        
+        Steem.sharedInstance.api.getRecoveryRequest(account: "moonrise") { (error, response) in
             if error != nil {
                 return;
             }
@@ -478,6 +572,94 @@ class SwiftyConnectTests: XCTestCase {
         expectations = expectation(description: "Wait for get_content to load.")
         
         Steem.sharedInstance.api.getRepliesByLastUpdate(author: "moonrise", permlink: "swiftyconnect-steemconnect-for-ios", limit: 10) { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+    }
+    
+    func test_market() {
+        var expectations = expectation(description: "Wait for get_order_book to load.")
+        
+        Steem.sharedInstance.api.getOrderBook(limit: 10) { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_open_orders to load.")
+        
+        Steem.sharedInstance.api.getOpenOrders(name: "moonrise") { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_liquidity_queue to load.")
+        
+        Steem.sharedInstance.api.getLiquidityQueue(name: "moonrise", limit: 1) { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+    }
+    
+    func test_witnesses() {
+        var expectations = expectation(description: "Wait for get_witness_count to load.")
+        
+        Steem.sharedInstance.api.getWitnessCount { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_active_witnesses to load.")
+        
+        Steem.sharedInstance.api.getActiveWitnesses { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_witnesses_by_vote to load.")
+        
+        Steem.sharedInstance.api.getWitnessesByVote(from: 0, limit: 10) { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 10)
+        
+        expectations = expectation(description: "Wait for get_witnesses to load.")
+        
+        Steem.sharedInstance.api.getWitnesses(witnessIds: ["2781"]) { (error, response) in
             if error != nil {
                 return;
             }

@@ -39,6 +39,8 @@
 		C1DFDF9F203C6C79000897C5 /* Steem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDF99203C6A1D000897C5 /* Steem.swift */; };
 		C1DFDFA2203C6E2D000897C5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDFA1203C6E2D000897C5 /* Api.swift */; };
 		C1DFDFA4203C6E2D000897C5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFDFA1203C6E2D000897C5 /* Api.swift */; };
+		C1E6678D206A1E5400152D38 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6678C206A1E5400152D38 /* Helper.swift */; };
+		C1E6678F206A1E5A00152D38 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6678C206A1E5400152D38 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,7 @@
 		C1DFDF97203C6969000897C5 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		C1DFDF99203C6A1D000897C5 /* Steem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steem.swift; sourceTree = "<group>"; };
 		C1DFDFA1203C6E2D000897C5 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		C1E6678C206A1E5400152D38 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +267,7 @@
 				C1DFDF99203C6A1D000897C5 /* Steem.swift */,
 				C19C5CC52045933E0084304A /* Broadcast.swift */,
 				C19C5CCA2046F8C60084304A /* Auth.swift */,
+				C1E6678C206A1E5400152D38 /* Helper.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -528,6 +532,7 @@
 				C14F2573203F007A003A42E5 /* Accounts.swift in Sources */,
 				C19C5CC62045933E0084304A /* Broadcast.swift in Sources */,
 				C1DFDF98203C6969000897C5 /* HttpClient.swift in Sources */,
+				C1E6678D206A1E5400152D38 /* Helper.swift in Sources */,
 				C1DFDF9A203C6A1D000897C5 /* Steem.swift in Sources */,
 				C14F2578203F0B45003A42E5 /* Misc.swift in Sources */,
 				C19C5CCB2046F8C60084304A /* Auth.swift in Sources */,
@@ -543,6 +548,7 @@
 				C14F2575203F007A003A42E5 /* Accounts.swift in Sources */,
 				C19C5CC82045933E0084304A /* Broadcast.swift in Sources */,
 				C1DFDF9F203C6C79000897C5 /* Steem.swift in Sources */,
+				C1E6678F206A1E5A00152D38 /* Helper.swift in Sources */,
 				C1DFDF9B203C6C56000897C5 /* HttpClient.swift in Sources */,
 				C14F257A203F0B45003A42E5 /* Misc.swift in Sources */,
 				C19C5CCD2046F8C60084304A /* Auth.swift in Sources */,
