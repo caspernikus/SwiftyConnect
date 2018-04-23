@@ -10,12 +10,12 @@ import Foundation
 
 public struct JSONMetadata: Codable {
     let tags: [String]
-    let links: [String?]
-    let image: [String?]
+    let links: [String]?
+    let image: [String]?
     let format: String
     let app: String
     
-    public init(tags: [String], links: [String?], image: [String?], format: String, app: String) {
+    public init(tags: [String], links: [String]?, image: [String]?, format: String, app: String) {
         self.tags = tags
         self.links = links
         self.image = image
@@ -224,19 +224,34 @@ public class Broadcast {
     // PRAGMA MARK: COMMENT
     
     public func comment(parentAuthor: String?, parentPermlink: String?, author: String, permlink: String, title: String, body: String, jsonMetadata: JSONMetadata, completion:((JSONString) -> Void)?) {
-        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
-            "operations": [
-                ["comment", [
-                    "parent_author": parentAuthor ?? "",
-                    "parent_permlink": parentPermlink ?? "",
-                    "author": author,
-                    "permlink": permlink,
-                    "title": title,
-                    "body": body,
-                    "json_metadata": jsonMetadata
+        
+        do {
+            let jsonData = try JSONStringify(value: [
+                    "app": jsonMetadata.app,
+                    "format": jsonMetadata.format,
+                    "image": jsonMetadata.image ?? [],
+                    "links": jsonMetadata.links ?? [],
+                    "tags": jsonMetadata.tags,
+                ]).stringify()
+            
+            Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+                "operations": [
+                    ["comment", [
+                        "parent_author": parentAuthor ?? "",
+                        "parent_permlink": parentPermlink ?? "",
+                        "author": author,
+                        "permlink": permlink,
+                        "title": title,
+                        "body": body,
+                        "json_metadata": jsonData
+                        ]
                     ]
                 ]
-            ]
-        ], callback: completion!)
+                ], callback: completion!)
+        } catch let error {
+            print(error)
+            completion!(["error": error])
+            return;
+        }
     }
 }

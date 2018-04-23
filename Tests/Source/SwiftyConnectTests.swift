@@ -24,7 +24,7 @@ class SwiftyConnectTests: XCTestCase {
     }
     
     func test_helpers() {
-        let expectations = expectation(description: "Wait for calculate_steempower to load.")
+        var expectations = expectation(description: "Wait for calculate_steempower to load.")
         
         Steem.sharedInstance.helper.calculateSteempower(vestingShares: "675898.790497 VESTS") { (error, steempower) in
             if error != nil {
@@ -43,6 +43,38 @@ class SwiftyConnectTests: XCTestCase {
         let rep = Steem.sharedInstance.helper.reputation(rawReputation: 7677323209728)
         
         XCTAssert(rep == 59.0)
+        
+        expectations = expectation(description: "Wait for get_steem_and_sbd_prices to load.")
+        
+        Steem.sharedInstance.helper.getSteemAndSbdPrices(currency: "EUR") { (error, response) in
+            if error != nil {
+                return;
+            }
+            
+            Steem.sharedInstance.helper.convertToCurrency(value: "1 STEEM", currency: "EUR", callback: { (error, converted) in
+                if error != nil {
+                    return;
+                }
+                
+                if converted == Double(response!["steem"] as! String) {
+                    expectations.fulfill()
+                }
+            })
+        }
+        
+        wait(for: [expectations], timeout: 15)
+        
+        var isValid = Steem.sharedInstance.helper.validAccountName(name: "moonrise")
+        
+        XCTAssert(isValid == nil)
+        
+        isValid = Steem.sharedInstance.helper.validAccountName(name: "mo")
+        
+        XCTAssert(isValid == "Account name should be longer")
+        
+        isValid = Steem.sharedInstance.helper.validAccountName(name: "mo--rise")
+        
+        XCTAssert(isValid == "Each account segment should have only one dash in a row")
     }
     
     func test_accounts() {
@@ -580,6 +612,18 @@ class SwiftyConnectTests: XCTestCase {
         }
         
         wait(for: [expectations], timeout: 10)
+        
+//        expectations = expectation(description: "Wait for get_transaction to load.")
+//
+//        Steem.sharedInstance.api.getTransaction(trxId: 0) { (error, response) in
+//            if error != nil {
+//                return;
+//            }
+//
+//            expectations.fulfill()
+//        }
+//
+//        wait(for: [expectations], timeout: 10)
     }
     
     func test_market() {

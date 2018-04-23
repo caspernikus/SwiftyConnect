@@ -20,8 +20,14 @@ public class Auth {
     var config : NSDictionary = [:]
     var loader : OAuth2DataLoader!
     
+    var basePath = "https://v2.steemconnect.com/api"
+    
     public func setConfig(conf: NSDictionary) {
         config = conf
+        
+        if let basePath = conf["base_path"] {
+            self.basePath = basePath  as! String
+        }
         
         oauth2 = OAuth2CodeGrantNoTokenType(settings: [
             "client_id": conf["client_id"] as! String,
@@ -66,8 +72,8 @@ public class Auth {
         return true
     }
     
-    func getBasePath() -> String {
-        return "https://v2.steemconnect.com/api"
+    public func getBasePath() -> String {
+        return basePath
     }
     
     func call(url: String, data: NSDictionary, callback: @escaping ((JSONString) -> Swift.Void)) {
@@ -83,16 +89,23 @@ public class Auth {
             req.allHTTPHeaderFields = headers
 
             loader.perform(request: req) { (response) in
-                if (response.response.statusCode != 200) {
-                    callback([
-                        "error": response.response.statusString,
-                        "error-code": response.response.statusCode
-                    ])
-                    return
-                }
-                
                 do {
                     let json = try response.responseJSON()
+                    
+                    if (response.response.statusCode != 200) {
+                        var err_desc : String = ""
+                        
+                        if let desc = json["error_description"] {
+                            err_desc = desc as! String
+                        }
+                        
+                        callback([
+                            "error": response.response.statusString,
+                            "error_code": response.response.statusCode,
+                            "error_desc": err_desc
+                            ])
+                        return
+                    }
                     
                     callback(json)
                 }

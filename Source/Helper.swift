@@ -67,6 +67,107 @@ public class Helper {
         return "re-\(parentAuthor)-\(permlink)-\(nowTimestamp)"
     }
     
+    public func getSteemAndSbdPrices(currency: String, callback:((Any?, NSDictionary?) -> Void)?) {
+        Steem.sharedInstance.api.client.getData(url: "https://api.coinmarketcap.com/v1/ticker/steem/?convert=\(currency)") { (error, response) in
+            if (error != nil) {
+                callback!(error, nil)
+                return
+            }
+            
+            let steem = (response as! NSDictionary)["price_\(currency.lowercased())"] as! String
+            
+            Steem.sharedInstance.api.client.getData(url: "https://api.coinmarketcap.com/v1/ticker/steem-dollars/?convert=\(currency)") { (error, response) in
+                if (error != nil) {
+                    callback!(error, nil)
+                    return
+                }
+                
+                let sbd = (response as! NSDictionary)["price_\(currency.lowercased())"] as! String
+                
+                callback!(error, [
+                    "steem": steem,
+                    "sbd": sbd
+                ])
+            }
+        }
+    }
+    
+    public func convertToCurrency(value: String, currency: String, callback:((Any?, Double?) -> Void)?) {
+        let splittedRef = value.split(separator: " ")
+        var converted = 0.0
+        
+        Steem.sharedInstance.helper.getSteemAndSbdPrices(currency: currency) { (error, response) in
+            if (error != nil) {
+                callback!(error, nil)
+                return
+            }
+            
+            let steemPrice = Double(response!["steem"] as! String)
+            let sbdPrice = Double(response!["sbd"] as! String)
+            
+            switch splittedRef[1] {
+            case "STEEM":
+                converted = Double(splittedRef[0])! * steemPrice!
+                break
+            case "SBD":
+                converted = Double(splittedRef[0])! * sbdPrice!
+                break
+            default:
+                break
+            }
+            
+            callback!(nil, converted)
+        }
+    }
+    
+    public func validAccountName(name: String) -> String? {
+        if name.count == 0 {
+            return "Account name should not be empty"
+        } else if name.count < 3 {
+            return "Account name should be longer"
+        } else if name.count > 16 {
+            return "Account namr should be shorter"
+        }
+        
+        let ref = name.split(separator: ".")
+        for label in ref {
+            
+            var regex = try! NSRegularExpression(pattern: "^[a-z]", options: [])
+            var matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
+            
+            if matches.count == 0 {
+                return "Each account segment should start with a letter";
+            }
+            
+            regex = try! NSRegularExpression(pattern: "^[a-z0-9-]*$", options: [])
+            matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
+            
+            if (matches.count == 0) {
+                return "Each account segment should have only letters, digits, or dashes";
+            }
+            regex = try! NSRegularExpression(pattern: "--", options: [])
+            matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
+            
+            if (matches.count != 0) {
+              return "Each account segment should have only one dash in a row";
+            }
+            
+            regex = try! NSRegularExpression(pattern: "[a-z0-9]$", options: [])
+            matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
+            
+            if (matches.count == 0) {
+              return "Each account segment should end with a letter or digit";
+            }
+
+            if (label.count < 3) {
+              return "Each account segment should be longer";
+            }
+        }
+
+        
+        return nil
+    }
+    
     public func reputation(rawReputation: Double) -> Double {
         let log_10 = log10(rawReputation)
         let reputation = ((log_10 - 9) * 9) + 25
