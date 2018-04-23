@@ -3,14 +3,14 @@ SteemConnect Library for iOS / Swift
 
 ![swifty.png](https://raw.githubusercontent.com/caspernikus/SwiftyConnect/master/wallpaper.png)
 
-## Current Version: 0.1.5
+## Current Version: 0.1.6
 
 ### How To Use
 
 #### Installation
 **Carthage**
 ```
-github "caspernikus/SwiftyConnect" ~> 0.1.5
+github "caspernikus/SwiftyConnect" ~> 0.1.6
 ```
 (When building SwiftyConnect the lib OAuth2 is also builded, there is no need to add OAuth2 inside your project, since SwiftyConenct contains OAuth2!)
 
@@ -277,6 +277,13 @@ public func getVotingPower(votingPower: Int, lastVoteTime: String) -> Double
 public func createCommentPermlink(parentAuthor: String, parentPermlink: String) -> String
 
 public func reputation(rawReputation: Double) -> Double
+
+public func validAccountName(name: String) -> String?
+
+public func convertToCurrency(value: String, currency: String, callback:((Any?, Double?) -> Void)?)
+
+public func getSteemAndSbdPrices(currency: String, callback:((Any?, NSDictionary?) -> Void)?)
+
 ```
 
 **calculateSteempower**
@@ -290,6 +297,15 @@ Can be used to create comment permlinks (e.g re-moonrise-hello-{timestamp})
 
 **reputation**
 Converts the reputation into an readable state
+
+**validAccountName**
+Checks if an account name is valid
+
+**convertToCurrency**
+Converts an SBD / STEEM value to it's currency value (eg. "1 Steem" to 3 Euro)
+
+**getSteemAndSbdPrices**
+Fetches the latest SBD & STEEM prices from coinmarketcap
 
 # Roadmap
 - V0.2:
