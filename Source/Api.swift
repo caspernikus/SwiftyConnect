@@ -46,7 +46,7 @@ public class Api {
             let jsonData = try encoder.encode(getTrendingTags)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -75,7 +75,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -96,7 +96,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -117,7 +117,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -138,7 +138,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -159,7 +159,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -180,7 +180,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -201,7 +201,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -222,7 +222,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -243,7 +243,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -264,7 +264,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -285,7 +285,7 @@ public class Api {
             let jsonData = try encoder.encode(getDiscussionsByTrending)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -308,7 +308,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -329,7 +329,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -350,7 +350,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -373,7 +373,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -394,7 +394,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -415,7 +415,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -436,7 +436,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -457,7 +457,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -478,7 +478,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -499,7 +499,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -520,7 +520,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -541,7 +541,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -568,7 +568,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -591,7 +591,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -612,7 +612,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -633,7 +633,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -658,7 +658,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -679,7 +679,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -700,7 +700,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -721,7 +721,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -742,7 +742,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -763,7 +763,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -786,7 +786,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -807,7 +807,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -828,7 +828,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -851,7 +851,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -876,7 +876,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -901,7 +901,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -926,7 +926,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -951,7 +951,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -976,7 +976,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -997,7 +997,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1018,7 +1018,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1039,7 +1039,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1060,7 +1060,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1081,7 +1081,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1102,7 +1102,7 @@ public class Api {
             let jsonData = try encoder.encode(getAccountsData)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1129,7 +1129,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1154,7 +1154,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1179,7 +1179,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1204,7 +1204,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1228,7 +1228,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1252,7 +1252,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1276,7 +1276,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1303,7 +1303,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1328,7 +1328,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }
@@ -1353,7 +1353,7 @@ public class Api {
             let jsonData = try JSONSerialization.data(withJSONObject: getAccountsData, options: .prettyPrinted)
             
             self.client.useEndpoint(jsonData: jsonData) { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     completion!(error, nil)
                     return
                 }

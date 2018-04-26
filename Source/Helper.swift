@@ -26,7 +26,7 @@ public class Helper {
     
     public func calculateSteempower(vestingShares: String, callback:((Any?, Float?) -> Void)?) {
         Steem.sharedInstance.api.getDynamicGlobalProperties { (error, response) in
-            if error != nil {
+            guard error == nil else {
                 callback!(error, nil)
                 return;
             }
@@ -69,7 +69,7 @@ public class Helper {
     
     public func getSteemAndSbdPrices(currency: String, callback:((Any?, NSDictionary?) -> Void)?) {
         Steem.sharedInstance.api.client.getData(url: "https://api.coinmarketcap.com/v1/ticker/steem/?convert=\(currency)") { (error, response) in
-            if (error != nil) {
+            guard error == nil else {
                 callback!(error, nil)
                 return
             }
@@ -77,7 +77,7 @@ public class Helper {
             let steem = (response as! NSDictionary)["price_\(currency.lowercased())"] as! String
             
             Steem.sharedInstance.api.client.getData(url: "https://api.coinmarketcap.com/v1/ticker/steem-dollars/?convert=\(currency)") { (error, response) in
-                if (error != nil) {
+                guard error == nil else {
                     callback!(error, nil)
                     return
                 }
@@ -97,7 +97,7 @@ public class Helper {
         var converted = 0.0
         
         Steem.sharedInstance.helper.getSteemAndSbdPrices(currency: currency) { (error, response) in
-            if (error != nil) {
+            guard error == nil else {
                 callback!(error, nil)
                 return
             }
@@ -135,31 +135,31 @@ public class Helper {
             var regex = try! NSRegularExpression(pattern: "^[a-z]", options: [])
             var matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
             
-            if matches.count == 0 {
+            guard matches.count != 0 else {
                 return "Each account segment should start with a letter";
             }
             
             regex = try! NSRegularExpression(pattern: "^[a-z0-9-]*$", options: [])
             matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
             
-            if (matches.count == 0) {
+            guard matches.count != 0 else {
                 return "Each account segment should have only letters, digits, or dashes";
             }
             regex = try! NSRegularExpression(pattern: "--", options: [])
             matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
             
-            if (matches.count != 0) {
+            guard matches.count == 0 else {
               return "Each account segment should have only one dash in a row";
             }
             
             regex = try! NSRegularExpression(pattern: "[a-z0-9]$", options: [])
             matches = regex.matches(in: String(label), options: [], range: NSRange(location: 0, length: label.count))
             
-            if (matches.count == 0) {
+            guard matches.count != 0 else {
               return "Each account segment should end with a letter or digit";
             }
 
-            if (label.count < 3) {
+            guard label.count >= 3 else {
               return "Each account segment should be longer";
             }
         }
