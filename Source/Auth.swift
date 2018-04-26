@@ -143,21 +143,6 @@ public class Auth {
         }
     }
     
-//    func revokeApp(callback: @escaping ((Bool) -> Swift.Void)) {
-//        let req = oauth2!.request(forURL: URL(string: "https://steemconnect.com/api/token/revoke/user/\(oauth2!.clientId!)")!)
-//
-//        oauth2!.perform(request: req) { (response) in
-//            do {
-//                _ = try response.responseJSON()
-//
-//                callback(true)
-//            } catch let error {
-//                print(error)
-//                callback(false)
-//            }
-//        }
-//    }
-    
     public func handleRedirectURL(url: URL) {
         oauth2!.handleRedirectURL(url)
     }

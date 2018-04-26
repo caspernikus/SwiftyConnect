@@ -247,11 +247,39 @@ public class Broadcast {
                         ]
                     ]
                 ]
-                ], callback: completion!)
+            ], callback: completion!)
         } catch let error {
             print(error)
             completion!(["error": error])
             return;
         }
+    }
+    
+    public func commentOptions(author : String, permlink: String, maxAcceptedPayout: String?, percentSteemDollars: Int?, allowVotes : Bool, allowCurationRewards : Bool, extensions: NSDictionary?, completion:((JSONString) -> Void)?) {
+        
+        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+            "operations": [
+                ["comment_options", [
+                    "author": author,
+                    "permlink": permlink,
+                    "max_accepted_payout": maxAcceptedPayout ?? "1000000.000 SBD",
+                    "percent_steem_dollars": percentSteemDollars ?? 10000,
+                    "allow_votes": allowVotes,
+                    "allow_curation_rewards": allowCurationRewards,
+                    "extensions": extensions ?? ""
+                ]]
+            ]
+        ], callback: completion!)
+    }
+    
+    public func commentDelete(author : String, permlink: String, completion:((JSONString) -> Void)?) {
+        Steem.sharedInstance.auth.call(url: "/broadcast", data: [
+            "operations": [
+                ["delete_comment", [
+                    "author": author,
+                    "permlink": permlink
+                ]]
+            ]
+        ], callback: completion!)
     }
 }
