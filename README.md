@@ -3,14 +3,14 @@ SteemConnect Library for iOS / Swift
 
 ![swifty.png](https://raw.githubusercontent.com/caspernikus/SwiftyConnect/master/wallpaper.png)
 
-## Current Version: 0.1.6
+## Current Version: 0.1.7
 
 ### How To Use
 
 #### Installation
 **Carthage**
 ```
-github "caspernikus/SwiftyConnect" ~> 0.1.6
+github "caspernikus/SwiftyConnect" ~> 0.1.7
 ```
 (When building SwiftyConnect the lib OAuth2 is also builded, there is no need to add OAuth2 inside your project, since SwiftyConenct contains OAuth2!)
 
@@ -309,10 +309,8 @@ Fetches the latest SBD & STEEM prices from coinmarketcap
 
 # Roadmap
 - V0.2:
-  - Full API Unit Tests
-  - Full API Documentation
+  - Full Code Documentation
 - V1.0:
-  - Full Documentation
   - Sign Actions
   
 # Known Errors
@@ -320,3 +318,6 @@ Fetches the latest SBD & STEEM prices from coinmarketcap
 ["error-code": 500, "error": "internal server error"]
 ```
 This basically means your data is wrong or your action is invalid (e.g voting a post you already have voted)
+
+# Contribution
+If you like the project feel free to fork it. Please create Pull Requests for updates!
