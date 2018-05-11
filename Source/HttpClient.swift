@@ -10,12 +10,24 @@ import Foundation
 
 class HttpClient {
     
+    
+    /// Steem API Variable
     var api : String!
     
+    
+    /// Init
+    ///
+    /// - Parameter api: The steem API URL; Defaults to: 'https://api.steemit.com'
     init(api: String) {
        self.api = api
     }
     
+    
+    /// Fetch Data using a GET Request
+    ///
+    /// - Parameters:
+    ///   - url: Specified source (e.g API URL)
+    ///   - completion: Completion Block; Returns error and response objects
     func getData(url: String, completion:((Any?, _ response: Any?) -> Void)?) {
         let urlCom = URLComponents(string: url)?.url
         
@@ -59,6 +71,13 @@ class HttpClient {
         task.resume()
     }
     
+    
+    /// Fetch Data using POST requests. Is used to fetch data from the condenser / steem API.
+    /// The URL is specified during initialisation
+    ///
+    /// - Parameters:
+    ///   - jsonData: Post Body Data
+    ///   - completion: Completion Block; Returns error and response objects
     func useEndpoint(jsonData: Data, completion:((Any?, _ response: Any?) -> Void)?) {
         let url = URLComponents(string: api)?.url
 
