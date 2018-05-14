@@ -64,6 +64,18 @@ class SwiftyConnectTests: XCTestCase {
         
         wait(for: [expectations], timeout: 15)
         
+        expectations = expectation(description: "Wait for paginate_account_history to load.")
+        
+        Steem.sharedInstance.helper.paginateAccountHistory(name: "moonrise", steps: 100, pageSteps: 20, maxLimit: nil) { (error, response) in
+            guard error == nil else {
+                return;
+            }
+
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 40)
+        
         var isValid = Steem.sharedInstance.helper.validAccountName(name: "moonrise")
         
         XCTAssert(isValid == nil)
@@ -152,7 +164,7 @@ class SwiftyConnectTests: XCTestCase {
         
         expectations = expectation(description: "Wait for get_conversion_requests to load.")
         
-        Steem.sharedInstance.api.getConversionRequests(account: "moonrise") { (error, response) in
+        Steem.sharedInstance.api.getConversionRequests(id: 1) { (error, response) in
             guard error == nil else {
                 return;
             }
@@ -641,7 +653,7 @@ class SwiftyConnectTests: XCTestCase {
         
         expectations = expectation(description: "Wait for get_open_orders to load.")
         
-        Steem.sharedInstance.api.getOpenOrders(name: "moonrise") { (error, response) in
+        Steem.sharedInstance.api.getOpenOrders(account: "moonrise") { (error, response) in
             guard error == nil else {
                 return;
             }
@@ -653,7 +665,7 @@ class SwiftyConnectTests: XCTestCase {
         
         expectations = expectation(description: "Wait for get_liquidity_queue to load.")
         
-        Steem.sharedInstance.api.getLiquidityQueue(name: "moonrise", limit: 1) { (error, response) in
+        Steem.sharedInstance.api.getLiquidityQueue(account: "moonrise", limit: 1) { (error, response) in
             guard error == nil else {
                 return;
             }
@@ -691,7 +703,7 @@ class SwiftyConnectTests: XCTestCase {
         
         expectations = expectation(description: "Wait for get_witnesses_by_vote to load.")
         
-        Steem.sharedInstance.api.getWitnessesByVote(from: 0, limit: 10) { (error, response) in
+        Steem.sharedInstance.api.getWitnessesByVote(from: "a", limit: 10) { (error, response) in
             guard error == nil else {
                 return;
             }
