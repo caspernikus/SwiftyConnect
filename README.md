@@ -3,14 +3,14 @@ SteemConnect Library for iOS / Swift
 
 ![swifty.png](https://raw.githubusercontent.com/caspernikus/SwiftyConnect/master/wallpaper.png)
 
-## Current Version: 0.1.7
+## Current Version: 0.2
 
 ### How To Use
 
 #### Installation
 **Carthage**
 ```
-github "caspernikus/SwiftyConnect" ~> 0.1.7
+github "caspernikus/SwiftyConnect" ~> 0.2
 ```
 (When building SwiftyConnect the lib OAuth2 is also builded, there is no need to add OAuth2 inside your project, since SwiftyConenct contains OAuth2!)
 
@@ -284,6 +284,8 @@ public func convertToCurrency(value: String, currency: String, callback:((Any?, 
 
 public func getSteemAndSbdPrices(currency: String, callback:((Any?, NSDictionary?) -> Void)?)
 
+public func paginateAccountHistory(name: String, steps: Int, pageSteps: Int, maxLimit: Int?, completion:((Any?, Any?) -> Void)?)
+
 ```
 
 **calculateSteempower**
@@ -307,9 +309,10 @@ Converts an SBD / STEEM value to it's currency value (eg. "1 Steem" to 3 Euro)
 **getSteemAndSbdPrices**
 Fetches the latest SBD & STEEM prices from coinmarketcap
 
+**paginateAccountHistory**
+Paginate through an account transaction history
+
 # Roadmap
-- V0.2:
-  - Full Code Documentation
 - V1.0:
   - Sign Actions
   
