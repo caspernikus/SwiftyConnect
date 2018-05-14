@@ -22,6 +22,10 @@ public class Auth {
     
     var basePath = "https://v2.steemconnect.com/api"
     
+    
+    /// Set OAuth Config
+    ///
+    /// - Parameter conf: Config
     public func setConfig(conf: NSDictionary) {
         config = conf
         
@@ -48,10 +52,18 @@ public class Auth {
         loader = OAuth2DataLoader(oauth2: oauth2!)
     }
     
+    
+    /// Get current config
+    ///
+    /// - Returns: Current Config
     public func getConfig() -> NSDictionary {
         return self.config
     }
     
+    
+    /// Check if user is authorized
+    ///
+    /// - Returns: True or False
     public func isAuthorized() -> Bool {
         if oauth2!.accessToken == nil && oauth2!.refreshToken == nil {
             return false
@@ -72,10 +84,21 @@ public class Auth {
         return true
     }
     
+    
+    /// Get Base Path to OAuth API, defaults to 'https://v2.steemconnect.com/api'
+    ///
+    /// - Returns: Base Path
     public func getBasePath() -> String {
         return basePath
     }
     
+    
+    /// Makes a post request to an endpoint on the base path
+    ///
+    /// - Parameters:
+    ///   - url: Endpoint
+    ///   - data: Post Body Data
+    ///   - callback: JSON Data containing error or the response data
     func call(url: String, data: NSDictionary, callback: @escaping ((JSONString) -> Swift.Void)) {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
@@ -125,6 +148,10 @@ public class Auth {
         }
     }
     
+    
+    /// Revoke all tokens and unauthorize user
+    ///
+    /// - Parameter callback: Success True or False
     public func revoke(callback: @escaping ((Bool) -> Swift.Void)) {
         var req = oauth2!.request(forURL: URL(string: "\(getBasePath())/oauth2/token/revoke")!)
         req.httpMethod = "POST"
@@ -143,10 +170,18 @@ public class Auth {
         }
     }
     
+    
+    /// Delegate Redirect URL to OAuth2
+    ///
+    /// - Parameter url: Redirect URL
     public func handleRedirectURL(url: URL) {
         oauth2!.handleRedirectURL(url)
     }
     
+    
+    /// Can be used to check if authorizing has worked; Returns data about authorized user
+    ///
+    /// - Parameter callback: JSON Data containing error or response data
     public func me(callback: @escaping ((JSONString) -> Swift.Void)) {
         loader.perform(request: URLRequest(url: URL(string: "\(getBasePath())/me")!)) { (response) in
             do {
@@ -159,6 +194,12 @@ public class Auth {
         }
     }
     
+    
+    /// Updates User Metadata via PUT Request
+    ///
+    /// - Parameters:
+    ///   - userMetadata: New User Metadata
+    ///   - callback: JSON Data containing error or response data
     public func updateUserMetadata(userMetadata: JSONString, callback: @escaping ((JSONString) -> Swift.Void)) {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: userMetadata, options: .prettyPrinted)
@@ -193,6 +234,10 @@ public class Auth {
         }
     }
     
+    
+    /// Authorize User
+    ///
+    /// - Parameter callback: JSON Data containing error or response data
     public func authorize(callback: @escaping ((JSONString) -> Swift.Void)) {
         loader.perform(request: URLRequest(url: URL(string: "\(getBasePath())/me")!)) { (response) in
             do {
